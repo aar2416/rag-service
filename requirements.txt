@@ -1,0 +1,15 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic-settings>=2.4
+python-multipart>=0.0.9
+psycopg[binary,pool]>=3.2
+pgvector>=0.3
+numpy>=1.26
+anthropic>=1.12
+neo4j>=5.20
+
+# local embeddings (EMBEDDING_PROVIDER=local) - needs a Python version torch ships wheels for
+sentence-transformers>=3.0
+
+# hosted embeddings (EMBEDDING_PROVIDER=voyage)
+# voyageai>=0.3
