@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: rag
+      POSTGRES_DB: rag
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Optional: start with `docker compose --profile neo4j up -d` and set GRAPH_BACKEND=neo4j
+  neo4j:
+    image: neo4j:5
+    profiles: ["neo4j"]
+    environment:
+      NEO4J_AUTH: neo4j/password123
+    ports:
+      - "7474:7474"  # browser UI
+      - "7687:7687"  # bolt
+    volumes:
+      - neo4jdata:/data
+
+volumes:
+  pgdata:
+  neo4jdata:
