@@ -1,0 +1,1 @@
+This code represents Rag Service mockup
